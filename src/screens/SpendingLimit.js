@@ -36,7 +36,7 @@ export default function SpendingLimit(props) {
       <SafeAreaView style={{flex: 1}}>
         <View
           style={{
-            height: Dimensions.get('window').height > 736 ?'20%' : '24%',
+            height: Dimensions.get('window').height > 736 ?'22%' : '24%',
             backgroundColor: Colors.themeBlue,
             paddingHorizontal: normalise(15),
           }}>
