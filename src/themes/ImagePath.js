@@ -1,16 +1,16 @@
 const ImagePath = {
-    Logo: require('../assets/icons/Logo.png'),
-    Eye: require('../assets/icons/eye.png'),
-    Eye_Off: require('../assets/icons/eye-off.png'),
-    aspire: require('../assets/icons/aspire.png'),
-    visa: require('../assets/icons/visa.png'),
-    insight: require('../assets/icons/insight.png'),
-    transfer: require('../assets/icons/transfer.png'),
-    freeze: require('../assets/icons/freeze.png'),
-    deactivated: require('../assets/icons/deactivated.png'),
-    toggle: require('../assets/icons/toggle.png'),
+    Splash: require('../assets/images/Splash.png'),
+    effect: require('../assets/images/effect.png'),
     back: require('../assets/icons/back.png'),
-    spend: require('../assets/icons/spend.png'),
+    dp: require('../assets/images/dp.png'),
+    hamburger: require('../assets/icons/hamburger.png'),
+    dp2: require('../assets/images/dp2.png'),
+    dp3: require('../assets/images/dp3.png'),
+    dp4: require('../assets/images/dp4.png'),
+    dp5: require('../assets/images/dp5.png'),
+    sent: require('../assets/icons/sent.png'),
+    received: require('../assets/icons/received.png'),
+    failed: require('../assets/icons/failed.png'),
 }
 
 export default ImagePath
