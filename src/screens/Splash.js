@@ -16,9 +16,7 @@ export default function Splash(props) {
           flexGrow: 1,
           marginTop:
             Platform.OS === 'android'
-              ? Dimensions.get('window').height > 736
-                ? normalise(25)
-                : normalise(10)
+              ?  normalise(10)
               : Dimensions.get('window').height > 736
               ? normalise(-10)
               : normalise(15),

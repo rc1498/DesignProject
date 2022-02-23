@@ -13,7 +13,7 @@ const customHeight =
   Dimensions.get('window').height > 736
     ? Platform.OS === 'ios'
       ? 1.8
-      : 1.7
+      : 1.9
     : Platform.OS === 'ios'
     ? 2.0
     : 2.1;

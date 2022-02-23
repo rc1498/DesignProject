@@ -1,5 +1,15 @@
 import React, {useRef} from 'react';
-import {SafeAreaView, View, Text, Image, Dimensions} from 'react-native';
+import {
+  SafeAreaView,
+  View,
+  Text,
+  Image,
+  Dimensions,
+  KeyboardAvoidingView,
+  Platform,
+  Keyboard,
+  TouchableWithoutFeedback,
+} from 'react-native';
 import Colors from '../themes/Colors';
 import normalise from '../utils/helpers/dimen';
 import MyStatusBar from '../utils/helpers/MyStatusBar';
@@ -63,20 +73,30 @@ export default function Search(props) {
   };
 
   return (
-    <View style={{flex: 1, backgroundColor: Colors.bluePgBg}}>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={{flex: 1, backgroundColor: Colors.bluePgBg}}>
       <MyStatusBar
         barStyle={'light-content'}
         backgroundColor={Colors.bluePgBg}
       />
-      <SafeAreaView style={{flex: 1}}>
-        <Header page={'Search'} />
-        <CircleChart
-          ref={chartRef}
-          onPress={() => {
-            actionSheetRef?.current?.openActionSheet();
-          }}
-        />
-      </SafeAreaView>
+      <TouchableWithoutFeedback
+        style={{flex: 1}}
+        onPress={() => {
+          Keyboard.dismiss();
+        }}>
+        <SafeAreaView style={{flex: 1}}>
+          <Header page={'Search'} />
+
+          <CircleChart
+            ref={chartRef}
+            onPress={() => {
+              Keyboard.dismiss();
+              actionSheetRef?.current?.openActionSheet();
+            }}
+          />
+        </SafeAreaView>
+      </TouchableWithoutFeedback>
 
       <ActionSheet
         height={
@@ -91,6 +111,6 @@ export default function Search(props) {
         initalValue={0}>
         {actionSheetContent()}
       </ActionSheet>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
